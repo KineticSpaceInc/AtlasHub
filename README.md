@@ -6,44 +6,69 @@
 ![license](https://img.shields.io/badge/license-MIT-orange)
 ![status](https://img.shields.io/badge/status-stable-brightgreen)
 
-> All-in-one WhatsApp automation platform with economy, games, moderation, leveling system and web dashboard.
+> All-in-one WhatsApp bot platform — economy, games, moderation, leveling system and web dashboard.
+
+---
+
+# 🌍 Community & Support
+
+Stay connected with updates, releases and support.
+
+## 💬 Discord (Support • Premium • Help • Community)
+👉 https://discord.gg/AkQenmwgV3
+
+Inside Discord you can:
+- Get technical support
+- Report bugs
+- Suggest features
+- Receive updates
+- Access premium versions
+- Buy tokens / premium access
+- Talk with the AtlasHub community
+
+## 📢 WhatsApp Channel (News • Releases • Announcements)
+👉 https://www.whatsapp.com/channel/0029VbCBwNP9RZAXiMPOAe3f
+
+Official place for:
+- News
+- Version releases
+- Changelogs
+- Improvements
+- Project announcements
 
 ---
 
 # 🚀 What is AtlasHub?
 
-**AtlasHub** is an advanced WhatsApp bot platform developed by **Kinetic Space Inc.**
+AtlasHub is an advanced **WhatsApp automation platform** developed by **Kinetic Space Inc.**
 
-It is designed to go beyond simple chatbot behavior and act as a **complete automation hub**:
+It goes far beyond a simple chatbot and acts as a complete ecosystem:
 
-- 💰 Virtual economy
+- 💰 Economy system
 - 🎮 Games
-- 🛡 Moderation tools
-- 📊 Rankings & leveling
+- 🛡 Moderation
+- 📊 Levels & ranking
 - 🌐 Web dashboard
-- ⚙ Modular architecture
+- ⚙ Modular commands
+- 🔌 Developer friendly API
 
-AtlasHub is built for:
-- Communities
-- Businesses
-- Large groups
-- Developers
+Designed for communities, businesses and large groups.
 
 ---
 
 # ✨ Features
 
 | System | Included |
-|-----------|------------|
-| Economy system | ✅ |
-| Cooldowns / anti-spam | ✅ |
+|------------|------------|
+| Economy | ✅ |
 | Games | ✅ |
-| Levels & XP | ✅ |
-| Moderation tools | ✅ |
-| Web Panel | ✅ |
+| Moderation | ✅ |
+| XP & Levels | ✅ |
+| Rankings | ✅ |
+| Dashboard | ✅ |
+| Multi-group | ✅ |
+| Anti-spam | ✅ |
 | Modular commands | ✅ |
-| Multi-group support | ✅ |
-| Persistent database | ✅ |
 
 ---
 
@@ -96,7 +121,6 @@ SESSION_NAME=atlas
 ```
 
 Example:
-
 ```
 #menu
 ```
@@ -155,22 +179,18 @@ Example:
 # 🧠 Architecture
 
 ```
-WhatsApp User
-      │
-      ▼
+User
+  ↓
 whatsapp-web.js
-      │
-      ▼
+  ↓
 AtlasHub Core
-      │
- ┌────┼─────┐
- ▼    ▼     ▼
-Economy Games Commands
-      │
-      ▼
+  ├─ Commands
+  ├─ Economy
+  ├─ Games
+  ├─ Moderation
+  ↓
 Database
-      │
-      ▼
+  ↓
 Web Panel (Express)
 ```
 
@@ -193,7 +213,6 @@ atlashub/
 │
 ├─ index.js
 ├─ package.json
-├─ .env.example
 ├─ README.md
 └─ LICENSE
 ```
@@ -202,23 +221,16 @@ atlashub/
 
 # 🔌 Developer API
 
-## Create a command
+Create commands easily:
 
 ```js
 module.exports = {
   name: "ping",
   cooldown: 3000,
-  run: async (client, message, args) => {
+  run: async (client, message) => {
     message.reply("Pong!");
   }
 }
-```
-
-## Register events
-
-```js
-client.on("message", handler)
-client.on("ready", () => console.log("AtlasHub ready"))
 ```
 
 ---
@@ -237,48 +249,23 @@ Open:
 http://localhost:3000
 ```
 
-Panel features:
-- View users
-- Manage economy
-- Stats
+Features:
+- User stats
+- Economy management
 - Logs
+- Monitoring
 - System control
-
----
-
-# 🔒 Security
-
-AtlasHub includes:
-
-- Cooldowns
-- Anti-spam checks
-- Input validation
-- Safe session handling
-- Error protection
-- Modular isolation
 
 ---
 
 # 🤝 Contributing
 
-We welcome contributions!
+1. Fork
+2. Create branch
+3. Commit
+4. Pull Request
 
-1. Fork the repo
-2. Create a branch
-3. Commit changes
-4. Open Pull Request
-
----
-
-# 🗺 Roadmap
-
-- [ ] Achievements system
-- [ ] More games
-- [ ] Advanced dashboard
-- [ ] SQLite DB
-- [ ] Plugin marketplace
-- [ ] Multi-instance scaling
-- [ ] REST API
+We welcome contributions ❤️
 
 ---
 
