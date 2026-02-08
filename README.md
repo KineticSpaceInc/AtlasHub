@@ -1,317 +1,176 @@
 # 🤖 AtlasHub
-### More than a bot — a full automation hub
 
-![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
-![Commercial License](https://img.shields.io/badge/Commercial-License%20Available-gold)
-![Version](https://img.shields.io/badge/version-1.9-black)
-![Node](https://img.shields.io/badge/node-%3E=20-green)
-![Status](https://img.shields.io/badge/status-stable-brightgreen)
-![WhatsApp Bot](https://img.shields.io/badge/platform-WhatsApp-25D366)
-![Company](https://img.shields.io/badge/Kinetic-Space%20Inc.-purple)
+AtlasHub es un bot avanzado para WhatsApp desarrollado en Node.js utilizando la librería **whatsapp-web.js**.  
+Este repositorio corresponde **exclusivamente** a la edición **Open Source** del proyecto.
 
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/AkQenmwgV3)
-[![WhatsApp Channel](https://img.shields.io/badge/WhatsApp-Channel-25D366?logo=whatsapp&logoColor=white)](https://www.whatsapp.com/channel/0029VbCBwNP9RZAXiMPOAe3f)
-
-> All-in-one WhatsApp bot platform — economy, games, moderation, leveling system and web dashboard.
+Proyecto propiedad de **Kinetic Space Inc.**
 
 ---
 
-# 🌍 Community & Support
+## Edición Lite (Open Source)
 
-Stay connected with updates, releases and support.
+La edición Lite es **pública**, **educativa** y **autohospedable**.
 
-## 💬 Discord (Support • Premium • Help • Community)
-👉 https://discord.gg/AkQenmwgV3
+**❌ No incluye:**
+- Funciones premium  
+- Comercio  
+- Sistemas de pago  
+- Características privadas de la versión FULL  
 
-Inside Discord you can:
-- Get technical support
-- Report bugs
-- Suggest features
-- Receive updates
-- Access premium versions
-- Buy tokens / premium access
-- Talk with the AtlasHub community
-
-## 📢 WhatsApp Channel (News • Releases • Announcements)
-👉 https://www.whatsapp.com/channel/0029VbCBwNP9RZAXiMPOAe3f
-
-Official place for:
-- News
-- Version releases
-- Changelogs
-- Improvements
-- Project announcements
+La versión FULL existe, pero **NO** se documenta en este repositorio.
 
 ---
 
-# 🚀 What is AtlasHub?
+## ⚙️ Arquitectura General (Lite)
 
-AtlasHub is an advanced **WhatsApp automation platform** developed by **Kinetic Space Inc.**
-
-It goes far beyond a simple chatbot and acts as a complete ecosystem:
-
-- 💰 Economy system
-- 🎮 Games
-- 🛡 Moderation
-- 📊 Levels & ranking
-- 🌐 Web dashboard
-- ⚙ Modular commands
-- 🔌 Developer friendly API
-
-Designed for communities, businesses and large groups.
+- Sistema de comandos modular  
+- Core desacoplado  
+- Sistema económico básico  
+- Juegos de azar  
+- Perfiles de usuario  
+- Ranking  
+- Panel web local  
+- Persistencia de datos local (JSON)  
 
 ---
 
-# ✨ Features
+## 🎮 Juegos Incluidos (Lite)
 
-| System | Included |
-|------------|------------|
-| Economy | ✅ |
-| Games | ✅ |
-| Moderation | ✅ |
-| XP & Levels | ✅ |
-| Rankings | ✅ |
-| Dashboard | ✅ |
-| Multi-group | ✅ |
-| Anti-spam | ✅ |
-| Modular commands | ✅ |
+- Coinflip  
+- Dice  
+- Roulette  
+- Higher / Lower  
+- Slots  
+- Blackjack  
+- Lottery  
 
 ---
 
-# 🛠 Tech Stack
+## 📲 Comandos
 
-```
-Node.js
-whatsapp-web.js
-Express
-Puppeteer
-JSON / SQLite
-```
+**Prefijo global:** `!`
 
----
+### Economía
+- `!balance`  
+- `!daily`  
+- `!work`  
+- `!profile`  
 
-# 📦 Installation
+### Juegos
+- `!coinflip`  
+- `!dice`  
+- `!roulette`  
+- `!higherlow`  
+- `!slots`  
+- `!blackjack`  
+- `!lottery`  
 
-## Requirements
-- Node.js 18+
-- NPM
-- WhatsApp account
+### Ranking
+- `!leaderboard`  
+- `!rank`  
+- `!stats`  
 
-## Setup
-
-```bash
-git clone https://github.com/YOUR_USER/atlashub
-cd atlashub
-npm install
-node index.js
-```
-
----
-
-# ⚙ Configuration
-
-Create `.env` file:
-
-```
-PREFIX=#
-PORT=3000
-SESSION_NAME=atlas
-```
+### Utilidad
+- `!help`  
+- `!info`  
+- `!ping`  
+- `!version`  
+- `!botinfo`  
 
 ---
 
-# 🔑 Command Prefix
+## 🧰 Requisitos
 
-```
-#
-```
-
-Example:
-```
-#menu
-```
+- Node.js v18 o superior  
+- npm  
+- Cuenta activa de WhatsApp  
 
 ---
 
-# 📚 Commands
+## 📊 Panel Web Local
 
-## 💰 Economy
-```
-#daily
-#work
-#balance
-#bank
-#deposit
-#withdraw
-#pay
-```
+Disponible en:
+http://localhost:3000
 
-## 🎮 Games
-```
-#coinflip
-#dice
-#slots
-#rps
-#blackjack
-```
+Incluye:
 
-## 👤 Profile
-```
-#profile
-#level
-#rank
-#top
-```
+Estado del bot
 
-## ⚙ Utility
-```
-#menu
-#ping
-#uptime
-#info
-```
+Estadísticas básicas
 
-## 👑 Admin
-```
-#warn
-#reset
-#addcoins
-#ban
-#unban
-```
+Ranking
 
 ---
 
-# 🧠 Architecture
-
-```
-User
-  ↓
-whatsapp-web.js
-  ↓
-AtlasHub Core
-  ├─ Commands
-  ├─ Economy
-  ├─ Games
-  ├─ Moderation
-  ↓
-Database
-  ↓
-Web Panel (Express)
-```
-
----
-
-# 📁 Project Structure
-
-```
-atlashub/
+## 📂 Estructura del proyecto
+AtlasHub/
 │
-├─ src/
-│   ├─ core/
-│   ├─ commands/
-│   ├─ database/
-│   └─ utils/
+├─ core/
+│  ├─ economy.js
+│  ├─ games.js
+│  ├─ database.js
+│  ├─ commands.js
+│  └─ utils.js
 │
 ├─ panel/
-├─ data/
-├─ docs/
+│  └─ server.js
 │
 ├─ index.js
 ├─ package.json
-├─ README.md
-└─ LICENSE
-```
+└─ .env
 
 ---
 
-# 🔌 Developer API
-
-Create commands easily:
-
-```js
-module.exports = {
-  name: "ping",
-  cooldown: 3000,
-  run: async (client, message) => {
-    message.reply("Pong!");
-  }
-}
-```
+## Configuracion (.env)
+BOT_NAME=AtlasHub
+BOT_VERSION=2.1.0-LITE
+BOT_PREFIX=!
+OWNER_ID=XXXXXXXXXX@c.us
+PORT=3000
 
 ---
 
-# 🌐 Web Panel
+## Licencia
 
-Run:
+Este proyecto utiliza licencia dual:
+
+MIT
+
+GPL-3.0
+
+---
+
+## Contribuciones
+
+Se aceptan Pull Requests.
+El código debe respetar estrictamente la arquitectura existente del proyecto.
+
+---
+
+## Comunidad y Contacto
+
+Correo IA: Kinetic.AI@post.com
+
+Correo general: KineticSpaceOfficial@gmail.com
+
+Discord: https://discord.gg/AkQenmwgV3
+
+Canal de WhatsApp: https://www.whatsapp.com/channel/0029VbCBwNP9RZAXiMPOAe3f
+
+---
+
+# Créditos
+
+AtlasHub es un proyecto desarrollado por Kinetic Space Inc.
+La edición Open Source (Lite) representa la base pública del ecosistema AtlasHub.
+
+---
+
+## 📦Instalación
 
 ```bash
-npm run panel
-```
-
-Open:
-
-```
-http://localhost:3000
-```
-
-Features:
-- User stats
-- Economy management
-- Logs
-- Monitoring
-- System control
-
----
-
-# 🤝 Contributing
-
-1. Fork
-2. Create branch
-3. Commit
-4. Pull Request
-
-We welcome contributions ❤️
-
----
-
-# 🏢 Organization
-
-Developed by:
-
-**Kinetic Space Inc.**
-
-Software • Automation • AI • Platforms
-
----
-
-# 📬 Contact
-
-### 🤖 AI Department
-Kinetic.AI@post.com
-
-### 🌐 General / Business
-KineticSpaceOfficial@gmail.com
-
----
-
-## 📜 License
-
-AtlasHub is distributed under a **Dual License model**:
-
-### 🟢 Open Source
-GNU GPL v3 – Free and open-source usage.
-
-### 🔵 Commercial
-For private, closed-source, SaaS or enterprise usage,
-a commercial license is required.
-
-Contact:
-Kinetic.AI@post.com
-KineticSpaceOfficial@gmail.com
-
-
----
-
-# ⭐ AtlasHub
-### More than a bot — a full automation hub
+git clone https://github.com/KineticSpaceInc/AtlasHub
+cd AtlasHub
+npm install
+npm start
+Durante el primer inicio se generará un código QR para vincular WhatsApp Web.
